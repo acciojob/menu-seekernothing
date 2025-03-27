@@ -1,13 +1,10 @@
-import React, { useState } from "react";
-import CompA from "./CompA";
-
-const data = [
+const MenuItems = [
   {
     id: 1,
     title: "buttermilk pancakes",
     category: "breakfast",
     price: 15.99,
-    img: "./images/item-1.jpeg",
+    img: "./images/buttermilk-pancakes-8-square.jpg",
     desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
   },
   {
@@ -15,7 +12,7 @@ const data = [
     title: "diner double",
     category: "lunch",
     price: 13.99,
-    img: "./images/item-2.jpeg",
+    img: "./images/item2.jpg",
     desc: `vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats `,
   },
   {
@@ -75,84 +72,4 @@ const data = [
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
 ];
-
-const App = () => {
-  const [items, setItems] = useState(data);
-  const [filteredItems, setFilteredItems] = useState(data);
-
-  return (
-    <div id="main">
-      <h1>Our Menu</h1>
-
-      <div>
-        <button
-          onClick={() => {
-            const cat = "all";
-
-            // const nArr = items.filter((item) => {
-            //     return item.category == cat
-            // })
-
-            setFilteredItems(data);
-            // console.log(nArr)
-          }}
-        >
-          All
-        </button>
-        <button
-          id="filter-btn-1"
-          onClick={() => {
-            const cat = "breakfast";
-
-            const nArr = items.filter((item) => {
-              return item.category == cat;
-            });
-
-            setFilteredItems(nArr);
-            // console.log(nArr)
-          }}
-        >
-          Breakfast
-        </button>
-        <button
-          id="filter-btn-2"
-          onClick={() => {
-            const cat = "lunch";
-
-            const nArr = items.filter((item) => {
-              return item.category == cat;
-            });
-
-            setFilteredItems(nArr);
-            // console.log(nArr)
-          }}
-        >
-          Lunch
-        </button>
-        <button
-          id="filter-btn-3"
-          onClick={() => {
-            const cat = "shakes";
-
-            const nArr = items.filter((item) => {
-              return item.category == cat;
-            });
-
-            setFilteredItems(nArr);
-            // console.log(nArr)
-          }}
-        >
-          Shakes
-        </button>
-      </div>
-
-      <div style={{ display: "flex", flexWrap: "wrap" }}>
-        {filteredItems.map((item) => {
-          return <CompA item={item} />;
-        })}
-      </div>
-    </div>
-  );
-};
-
-export default App;
+export default MenuItems;
